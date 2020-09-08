@@ -13,6 +13,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8000:8000
+    networks:
+      [webservice_network]
     env_file:
       - devroast/.env
     depends_on:
@@ -25,6 +27,8 @@ services:
     stdin_open: true
     ports:
       - 3000:3000
+    networks:
+      [webservice_network]
     env_file:
       - devroast/.env
     depends_on:
